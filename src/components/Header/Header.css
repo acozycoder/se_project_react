@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 32px 0 28px;
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20;
+}
+
+.header__logo {
+    margin-right: 24px;
+}
+
+.header__date-and-location{
+    margin: 0;
+}
+
+.header__add-clothes {
+    margin: 0 20px 0 auto;
+    border: none;
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20;
+    cursor: pointer;
+}
+
+.header__user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__username {
+    margin: 0;
+    line-height: 1.2;
+}

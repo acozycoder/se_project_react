@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__text {
+    font-family: 'Cabinet Grotesk-Regular';
+    font-weight: 500;
+    font-size: 16;
+    line-height: 1.25;
+    margin-bottom: 24;
+}
