@@ -6,7 +6,7 @@ import { currentDate } from "../../utils/constants";
 function Header({ handleAddClothes, weatherData }) {
     return (
         <header className="header">
-             <img className="header__logo" src={Logo}/>
+             <img className="header__logo" src={Logo} alt="wtwr logo"/>
              <p className="header__date-and-location">{currentDate}, {weatherData.city}</p>
              <button onClick={handleAddClothes} type="button" className="header__add-clothes" > + Add clothes</button>  
             

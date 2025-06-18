@@ -15,7 +15,7 @@ import { processWeatherData } from "../../utils/weatherApi";
 
 function App() {
   const [weatherData, setWeatherData] = useState({ 
-      type: "cold" , 
+      type: "" , 
       temp:{ F: 999},
       city: "",
     });
@@ -28,7 +28,7 @@ function App() {
   };
 
   const handleAddClothes = () => {
-    setActiveModal("Add garment")
+    setActiveModal("add-garment")
   };
 
   const closeActiveModal = () => {
@@ -51,36 +51,37 @@ function App() {
       <Main weatherData={weatherData} handleAddClothes={setActiveModal} handleCardClick={handleCardClick}/>
       <Footer />
      </div>
-     <ModalWithForm title="New garment" buttonText="Add garment" activeModal={activeModal} onClose={closeActiveModal}>
-       <label htmlFor="modal-name" className="modal__label">
-                            Name
-                            <input id="modal-name" type="text" placeholder="Name" className="modal__input" minLength="2" maxLength="30"  required/>
-                        </label>
-                        <span className="modal__error" id="modal-name-error"></span>
-                        <label htmlFor="modal-url" className="modal__label" >
-                            Image
-                        <input id="modal-url" type="url" placeholder="Image URL" className="modal__input"  required/>
-                        </label>
-                        <span className="modal__error" id="modal-url-error"></span>
+     <ModalWithForm title="New garment" buttonText="Add garment" activeModal={activeModal} onClose={closeActiveModal} isOpen={activeModal === "add-garment"}>
+       <label htmlFor="modal-name" className="modal__label"> 
+          Name
+          <input id="modal-name" type="text" placeholder="Name" className="modal__input" minLength="2" maxLength="30"  required/>
+       </label>
+       <span className="modal__error" id="modal-name-error"></span>
 
-                        <fieldset className="modal__fieldset">
-                            <legend className="modal__legend">Select the weather type:</legend>
+       <label htmlFor="modal-url" className="modal__label" >
+          Image
+          <input id="modal-url" type="url" placeholder="Image URL" className="modal__input"  required/>
+        </label>
+        <span className="modal__error" id="modal-url-error"></span>
 
-                            <div className="modal__radio-buttons">
-                              <input id="hot" type="radio" className="modal__radio-input" />
-                              <label htmlFor="hot" className="modal__label modal__label_type_radio">Hot</label>
-                            </div>
+        <fieldset className="modal__fieldset">
+          <legend className="modal__legend">Select the weather type:</legend>
 
-                            <div className="modal__radio-buttons">
-                              <input id="warm" type="radio" className="modal__radio-input" />
-                              <label htmlFor="warm" className="modal__label modal__label_type_radio">Warm</label>
-                            </div>
+            <div className="modal__radio-buttons">
+              <input id="hot" type="radio" className="modal__radio-input" name="type"/>
+              <label htmlFor="hot" className="modal__label modal__label_type_radio">Hot</label>
+            </div>
 
-                            <div className="modal__radio-buttons">
-                              <input id="cold" type="radio" className="modal__radio-input" />
-                              <label htmlFor="hot" className="modal__label modal__label_type_radio">Cold</label>
-                            </div>
-                        </fieldset>
+            <div className="modal__radio-buttons">
+              <input id="warm" type="radio" className="modal__radio-input" name="type"/>
+              <label  htmlFor="warm" className="modal__label modal__label_type_radio">Warm</label>
+            </div>
+
+            <div className="modal__radio-buttons">
+              <input id="cold" type="radio" className="modal__radio-input" name="type"/>
+              <label htmlFor="hot" className="modal__label modal__label_type_radio">Cold</label>
+            </div>
+        </fieldset>
      </ModalWithForm>
      <ItemModal activeModal={activeModal} card={selectedCard} onClose={closeActiveModal}/>
     </div>
