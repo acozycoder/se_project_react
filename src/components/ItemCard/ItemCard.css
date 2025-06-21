@@ -28,3 +28,15 @@
     border: solid 1px rgba(0, 0, 0, .30);
 
 }
+
+@media screen and (max-width: 650px) {
+    .item__card {
+        height: 162px;
+        width: 162px;
+    }
+
+    .item__name {
+        max-width: 72px;
+        top: 7px;
+    }
+}

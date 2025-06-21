@@ -144,3 +144,9 @@
 .modal__submit-button:hover {
  opacity: 60%;
 }
+
+@media screen and (max-width: 650px) {
+  .modal {
+    z-index: 4;
+  }
+}
