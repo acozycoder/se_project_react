@@ -1,10 +1,14 @@
 import "./Profile.css";
+import SideBar from "../SideBar/SideBar";
+import ClothesSection from "../ClothesSection/ClothesSection";
 
-function Profile() {
+function Profile({handleAddClothes, handleCardClick}) {
     return (
-        <profile className="profile">
-            <p>Hey, I'm a profile</p>
-        </profile>
+        <section className="profile">
+            <SideBar />
+            <ClothesSection handleAddClothes={handleAddClothes}
+                  handleCardClick={handleCardClick}/>
+        </section>
     );
 }
 

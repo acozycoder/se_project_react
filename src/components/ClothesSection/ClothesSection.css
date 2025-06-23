@@ -1,0 +1,23 @@
+
+.clothes-section__header {
+    display: flex;
+}
+
+.clothes-section__text {
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.clothes-section__button {
+    margin: 0 20px 0 20px;
+    border: none;
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    color: rgba(0, 0, 0, 0.6);
+;
+}
