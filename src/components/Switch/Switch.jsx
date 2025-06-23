@@ -1,11 +1,15 @@
-import React from "react";
+import {useContext} from "react";
 import "./Switch.css";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
+
 
 function Switch() {
+const {handleToggleSwitchChange} = useContext(CurrentTemperatureUnitContext);
+
   return (
     <>
-      <label className="switch" htmlFor={`switch`}>
-        <input className="switch__checkbox" id={`switch`} type="checkbox" />
+      <label className="switch">
+        <input className="switch__checkbox" type="checkbox" onChange={handleToggleSwitchChange}/>
         <span className="switch__button"></span>
         <span className="switch__text switch__text_F">F</span>
         <span className="switch__text switch__text_C">C</span>
