@@ -6,12 +6,10 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-
 import AddItemModal from "../AddItemModal/AddItemModal";
 
 import { getTemperature } from "../../utils/weatherApi";
-import { APIKey } from "../../utils/constants";
-import { coordinates } from "../../utils/constants";
+import { APIKey, coordinates, defaultClothingItems } from "../../utils/constants";
 import { processWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
@@ -26,6 +24,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
@@ -44,6 +43,13 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const handleAddItemModalSubmit = ({name, imageUrl, weather}) => {
+    const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
+    
+    setClothingItems((prevItems) => [{name, link: imageUrl, weather, _id: newId}, ...prevItems]);
+    closeActiveModal();
   };
 
   useEffect(() => {
@@ -74,6 +80,7 @@ function App() {
                   weatherData={weatherData}
                   handleAddClothes={setActiveModal}
                   handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
                 />
               }
             />
@@ -85,11 +92,14 @@ function App() {
         </div>
         <AddItemModal activeModal={activeModal}
           onClose={closeActiveModal}
-          isOpen={activeModal === "add-garment"}/>
+          isOpen={activeModal === "add-garment"}
+          onAddItemModalSubmit={handleAddItemModalSubmit}
+          />
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

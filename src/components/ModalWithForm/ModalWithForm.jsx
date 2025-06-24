@@ -1,6 +1,6 @@
 import "./ModalWithForm.css";
 
-function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
+function ModalWithForm({ children, buttonText, title, isOpen, onClose, onSubmit }) {
   return (
     <div className={`modal ${isOpen ? "modal_open" : " "}`}>
       <div className="modal__container">
@@ -14,6 +14,7 @@ function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
           name="clothes-form"
           className="modal__form"
           id="clothes-form"
+          onSubmit={onSubmit}
           noValidate
         >
           {children}

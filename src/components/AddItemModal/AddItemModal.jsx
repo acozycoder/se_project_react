@@ -1,17 +1,33 @@
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useState, useEffect } from "react";
 
-const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
-  // declare state for each input field
+const AddItemModal = ({ isOpen, onAddItem, onClose, onAddItemModalSubmit }) => {
+  const [name, setName] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [weather, setWeather] = useState("");
 
-  // use a useEffect hook to reset the input field state to empty strings when 
-  // the modal is opened
+  useEffect(() => {
+    setName("");
+    setImageUrl("");
+    setWeather("");
+  }, [isOpen]);
 
-  // create onChange handlers corresponding to each state variable
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleImageUrlChange = (e) => {
+    setImageUrl(e.target.value);
+  }
+
+  const handleWeatherChange = (e) => {
+    setWeather(e.target.value);
+  }
 
   function handleSubmit(e) {
-    // prevent default behavior
-    // call onAddItem with appropriate arguments
+    e.preventDefault();
+    onAddItemModalSubmit({name, imageUrl, weather});
   }
 
   return (
@@ -20,28 +36,33 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           buttonText="Add garment"
           onClose={onClose}
           isOpen={isOpen}
+          onSubmit={handleSubmit}
         >
-          <label htmlFor="modal-name" className="modal__label">
+          <label htmlFor="clothing-item" className="modal__label">
             Name
             <input
-              id="modal-name"
+              id="clothing-item"
               type="text"
               placeholder="Name"
               className="modal__input"
               minLength="2"
               maxLength="30"
               required
+              onChange={handleNameChange}
+              value={name}
             />
           </label>
           <span className="modal__error" id="modal-name-error"></span>
 
-          <label htmlFor="modal-url" className="modal__label">
+          <label htmlFor="clothing-url" className="modal__label">
             Image
             <input
-              id="modal-url"
+              id="clothing-url"
               type="url"
               placeholder="Image URL"
               className="modal__input"
+              onChange={handleImageUrlChange}
+              value={imageUrl}
               required
             />
           </label>
@@ -56,6 +77,9 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
                 type="radio"
                 className="modal__radio-input"
                 name="weatherType"
+                value="hot"
+                onChange={handleWeatherChange}
+                checked={weather === "hot"}
               />
               <label
                 htmlFor="hot"
@@ -71,6 +95,9 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
                 type="radio"
                 className="modal__radio-input"
                 name="weatherType"
+                value="warm"
+                onChange={handleWeatherChange}
+                checked={weather === "warm"}
               />
               <label
                 htmlFor="warm"
@@ -86,9 +113,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
                 type="radio"
                 className="modal__radio-input"
                 name="weatherType"
+                value="cold"
+                onChange={handleWeatherChange}
+                checked={weather === "cold"}
               />
               <label
-                htmlFor="hot"
+                htmlFor="cold"
                 className="modal__label modal__label_type_radio"
               >
                 Cold
