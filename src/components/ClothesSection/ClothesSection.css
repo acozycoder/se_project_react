@@ -21,3 +21,12 @@
     color: rgba(0, 0, 0, 0.6);
 ;
 }
+@media screen and (max-width:650px) {
+    .clothes-section {
+        max-width: 100%;
+    }
+    
+    .clothes-section__header {
+        justify-content: space-between;
+    }
+}

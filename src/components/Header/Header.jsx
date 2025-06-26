@@ -53,7 +53,7 @@ function Header({ handleAddClothes, weatherData }) {
         </button>
       </div>
 
-      <Switch />
+      <Switch className="header__switch"/>
       <button
         onClick={handleAddClothes}
         type="button"

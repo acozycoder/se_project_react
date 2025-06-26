@@ -7,9 +7,14 @@ import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import DeleteModal from "../DeleteModal/DeleteModel";
 
 import { getTemperature } from "../../utils/weatherApi";
-import { APIKey, coordinates, defaultClothingItems } from "../../utils/constants";
+import {
+  APIKey,
+  coordinates,
+  defaultClothingItems,
+} from "../../utils/constants";
 import { processWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
@@ -45,10 +50,13 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemModalSubmit = ({name, imageUrl, weather}) => {
+  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
-    
-    setClothingItems((prevItems) => [{name, link: imageUrl, weather, _id: newId}, ...prevItems]);
+
+    setClothingItems((prevItems) => [
+      { name, link: imageUrl, weather, _id: newId },
+      ...prevItems,
+    ]);
     closeActiveModal();
   };
 
@@ -60,6 +68,27 @@ function App() {
       })
       .catch(console.error);
   }, []);
+
+  const openConfirmationModal = (card) => {
+    setActiveModal("delete");
+    setSelectedCard(card);
+  };
+
+  // const deleteItem = (selectedCard._id) => {
+
+  // };
+
+  const handleCardDelete = () => {
+    console.log("Fix me once the API is set up and try again");
+    // deleteItem(selectedCard._id)
+    // .then(() => {
+    //   setClothingItems((prevItems) =>
+    //     prevItems.filter((item) => item._id !== selectedCard._id)
+    //   );
+    //   closeActiveModal("delete");
+    // })
+    // .catch(console.error);
+  };
 
   return (
     <div className="page">
@@ -84,22 +113,36 @@ function App() {
                 />
               }
             />
-            <Route path="/profile" element={<Profile handleAddClothes={handleAddClothes}
-                  handleCardClick={handleCardClick}/>} />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  handleAddClothes={handleAddClothes}
+                  handleCardClick={handleCardClick}
+                />
+              }
+            />
           </Routes>
 
           <Footer />
         </div>
-        <AddItemModal activeModal={activeModal}
+        <AddItemModal
+          activeModal={activeModal}
           onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
           onAddItemModalSubmit={handleAddItemModalSubmit}
-          />
+        />
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
-          
+          openConfirmationModal={openConfirmationModal}
+        />
+        <DeleteModal
+          activeModal={activeModal}
+          card={selectedCard}
+          onClose={closeActiveModal}
+          onDelete={handleCardDelete}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

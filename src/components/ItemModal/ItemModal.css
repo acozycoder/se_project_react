@@ -1,18 +1,36 @@
-.modal__content_type_image {
+.item-modal__content {
     width: 498px;
     height: 610px;
     padding: 0;
     position: relative;
 }
 
-.modal__white-close-button {
+.item-modal__white-close-button {
     background-image: url(src/images/white-close-icon.png);
     top: 22px;
     right: 30px;
     z-index: 1;
 }
 
-.modal__image {
+.item-modal__button {
+  position: absolute;
+  right: 32px;
+  bottom: 68px;
+  font-family: 'Cabinet Grotesk Regular';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  border: none;
+  background: none;
+  color: rgba(255, 77, 0, 1);
+  height: 24px;
+  width: 101px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+}
+
+.item-modal__image {
   width: 496px;
   height: 498px;
   overflow: hidden;
@@ -22,15 +40,11 @@
   border-radius: 20px 20px 0 0;
 }
 
-.modal__footer {
-  font-family: 'Cabinet Grotesk Regular';
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.2;
-  margin: 0 32px 32px 32px;
+.item-modal__caption-button {
+  display: flex;
 }
 
-.modal__caption {
+.item-modal__caption {
   font-family: 'Cabinet Grotesk Regular';
   font-weight: 700;
   font-size: 20px;
@@ -40,8 +54,12 @@
   bottom: 68px;
 }
 
-.modal__weather {
+.item-modal__weather {
   margin: 0; 
   position: absolute;
   bottom: 32px;
+  font-family: 'Cabinet Grotesk Regular';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
 }

@@ -1,0 +1,37 @@
+.delete-modal__content {
+    height: 280px;
+    width: 670px;
+    padding: 60px;
+}
+
+.delete-modal__warning-message {
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0;
+}
+
+.delete-modal__delete-button {
+    border: none;
+    background: none;
+    color: rgba(255, 77, 0, 1);
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.delete-modal__cancel-button {
+    border: none;
+    background: none;
+    font-family: 'Cabinet Grotesk Bold';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 24px;
+    cursor: pointer;
+}

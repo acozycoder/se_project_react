@@ -1,19 +1,23 @@
 import "./ItemModal.css";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, onClose, card, openConfirmationModal }) {
   return (
     <div className={` modal ${activeModal === "preview" && "modal_open"} `}>
-      <div className="modal__container modal__content_type_image">
+      <div className="modal__container item-modal__content">
         <button
           onClick={onClose}
           type="button"
-          className="modal__close-button modal__white-close-button"
+          className="modal__close-button item-modal__white-close-button"
         />
-        <img className="modal__image" src={card.link} alt={card.name} />
-        <div className="modal__footer">
-          <h2 className="modal__caption">{card.name}</h2>
-          <p className="modal__weather">Weather: {card.weather}</p>
+
+        <img className="item-modal__image" src={card.link} alt={card.name} />
+
+        <div className="item-modal__caption-button">
+          <h2 className="item-modal__caption">{card.name}</h2>
+          <button className="item-modal__button" type="button" onClick={openConfirmationModal}>Delete item</button>
         </div>
+
+        <p className="item-modal__weather">Weather: {card.weather}</p>
       </div>
     </div>
   );

@@ -16,3 +16,14 @@
     margin: 0 116px 0 0;
     white-space: nowrap;
 }
+
+@media screen and (max-width:650px) {
+   .sidebar__avatar {
+    height: 56px;
+    width: 56px;
+   }
+
+   .sidebar__username {
+    font-size: 24px;
+   }
+}
