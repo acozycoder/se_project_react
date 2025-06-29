@@ -10,7 +10,7 @@ function ItemModal({ activeModal, onClose, card, openConfirmationModal }) {
           className="modal__close-button item-modal__white-close-button"
         />
 
-        <img className="item-modal__image" src={card.link} alt={card.name} />
+        <img className="item-modal__image" src={card.imageUrl} alt={card.name} />
 
         <div className="item-modal__caption-button">
           <h2 className="item-modal__caption">{card.name}</h2>

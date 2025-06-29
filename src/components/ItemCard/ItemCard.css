@@ -1,5 +1,6 @@
 .item__card {
-    width: 325px;
+    width: 328px;
+    height: 328px;
     position: relative;
     display: flex;
     justify-content: center;
