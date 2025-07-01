@@ -6,7 +6,6 @@ import { useState } from "react";
 import Switch from "../Switch/Switch";
 import { NavLink } from "react-router-dom";
 
-
 function Header({ handleAddClothes, weatherData }) {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
 
@@ -15,10 +14,9 @@ function Header({ handleAddClothes, weatherData }) {
   };
 
   return (
-
     <header className="header">
       <NavLink to="/">
-      <img className="header__logo" src={Logo} alt="wtwr logo" />
+        <img className="header__logo" src={Logo} alt="wtwr logo" />
       </NavLink>
 
       <p className="header__date-and-location">
@@ -35,12 +33,15 @@ function Header({ handleAddClothes, weatherData }) {
           isMobileMenuOpened ? "header__nav_open" : ""
         }`}
       >
-
         <NavLink to="/profile" className="header__profile-link">
-        <div className="header__nav-user-info">
-          <p className="header__username">Terrance Tegegne</p>
-          <img className="header__avatar" src={avatar} alt="Terrance Tegegne" />
-        </div>
+          <div className="header__nav-user-info">
+            <p className="header__username">Terrance Tegegne</p>
+            <img
+              className="header__avatar"
+              src={avatar}
+              alt="Terrance Tegegne"
+            />
+          </div>
         </NavLink>
 
         <button
@@ -53,7 +54,7 @@ function Header({ handleAddClothes, weatherData }) {
         </button>
       </div>
 
-      <Switch className="header__switch"/>
+      <Switch className="header__switch" />
       <button
         onClick={handleAddClothes}
         type="button"
@@ -64,10 +65,10 @@ function Header({ handleAddClothes, weatherData }) {
       </button>
 
       <NavLink to="/profile" className="header__profile-link">
-      <div className="header__user-info">
-        <p className="header__username">Terrance Tegegne</p>
-        <img className="header__avatar" src={avatar} alt="Terrance Tegegne" />
-      </div>
+        <div className="header__user-info">
+          <p className="header__username">Terrance Tegegne</p>
+          <img className="header__avatar" src={avatar} alt="Terrance Tegegne" />
+        </div>
       </NavLink>
     </header>
   );

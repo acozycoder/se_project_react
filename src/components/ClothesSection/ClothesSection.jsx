@@ -2,24 +2,20 @@ import "./ClothesSection.css";
 import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ handleAddClothes, handleCardClick}) {
-    return (
-        <section className="clothes-section">
-        
-        <div className="clothes-section__header">
-        <p className="clothes-section__text">
-          Your items
-        </p>
+function ClothesSection({ handleAddClothes, handleCardClick }) {
+  return (
+    <section className="clothes-section">
+      <div className="clothes-section__header">
+        <p className="clothes-section__text">Your items</p>
         <button
-        onClick={handleAddClothes}
-        type="button"
-        className="clothes-section__button"
-      >
-        {" "}
-        + Add new
-      </button>
+          onClick={handleAddClothes}
+          type="button"
+          className="clothes-section__button"
+        >
+          {" "}
+          + Add new
+        </button>
       </div>
-
 
       <ul className="cards__list">
         {defaultClothingItems
@@ -29,16 +25,15 @@ function ClothesSection({ handleAddClothes, handleCardClick}) {
           .map((item) => {
             return (
               <ItemCard
-                key={item._id}
+                key={item.id}
                 item={item}
                 onCardClick={handleCardClick}
               />
             );
           })}
       </ul>
-
-        </section>
-    );
+    </section>
+  );
 }
 
 export default ClothesSection;

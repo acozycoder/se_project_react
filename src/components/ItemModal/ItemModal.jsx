@@ -10,11 +10,21 @@ function ItemModal({ activeModal, onClose, card, openConfirmationModal }) {
           className="modal__close-button item-modal__white-close-button"
         />
 
-        <img className="item-modal__image" src={card.imageUrl} alt={card.name} />
+        <img
+          className="item-modal__image"
+          src={card.imageUrl}
+          alt={card.name}
+        />
 
         <div className="item-modal__caption-button">
           <h2 className="item-modal__caption">{card.name}</h2>
-          <button className="item-modal__button" type="button" onClick={openConfirmationModal}>Delete item</button>
+          <button
+            className="item-modal__button"
+            type="button"
+            onClick={openConfirmationModal}
+          >
+            Delete item
+          </button>
         </div>
 
         <p className="item-modal__weather">Weather: {card.weather}</p>

@@ -1,6 +1,6 @@
 import "./DeleteModal.css";
 
-function DeleteModal({ activeModal, onClose, onDelete, card}) {
+function DeleteModal({ activeModal, onClose, onDelete, card }) {
   return (
     <div className={` modal ${activeModal === "delete" && "modal_open"} `}>
       <div className="modal__container delete-modal__content">
@@ -11,12 +11,28 @@ function DeleteModal({ activeModal, onClose, onDelete, card}) {
         />
 
         <div className="delete-modal__warning">
-          <h2 className="delete-modal__warning-message">Are you sure you want to delete this item?</h2>
-          <h2 className="delete-modal__warning-message">This action is irreversible.</h2>
+          <h2 className="delete-modal__warning-message">
+            Are you sure you want to delete this item?
+          </h2>
+          <h2 className="delete-modal__warning-message">
+            This action is irreversible.
+          </h2>
         </div>
 
-        <button className="delete-modal__delete-button" type="button" onClick={() => onDelete(card)}>Yes, delete item</button>
-        <button className="delete-modal__cancel-button" type="button" onClick={onClose}>Cancel</button>
+        <button
+          className="delete-modal__delete-button"
+          type="button"
+          onClick={() => onDelete(card)}
+        >
+          Yes, delete item
+        </button>
+        <button
+          className="delete-modal__cancel-button"
+          type="button"
+          onClick={onClose}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );

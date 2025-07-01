@@ -68,7 +68,7 @@ function App() {
       .then((data) => {
         setClothingItems(data);
       })
-      .catch(console.error);
+      .catch((error) => console.log(error));
   }, []);
 
   const openConfirmationModal = () => {
@@ -76,8 +76,10 @@ function App() {
   };
 
   const handleCardDelete = (card) => {
+    console.log(card);
     deleteItem(card._id)
       .then((item) => {
+        console.log(item);
         setClothingItems(
           [item, ...clothingItems].filter((item) => item._id !== card._id)
         );
@@ -122,12 +124,12 @@ function App() {
 
           <Footer />
         </div>
-        <AddItemModal
-          activeModal={activeModal}
-          onClose={closeActiveModal}
-          isOpen={activeModal === "add-garment"}
-          onAddItemModalSubmit={handleAddItemModalSubmit}
-        />
+        {activeModal === "add-garment" && (
+          <AddItemModal
+            onClose={closeActiveModal}
+            onAddItemModalSubmit={handleAddItemModalSubmit}
+          />
+        )}
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}

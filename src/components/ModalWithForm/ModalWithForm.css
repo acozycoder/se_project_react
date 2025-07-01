@@ -133,12 +133,27 @@
  color: #FFF;
  border-radius: 4px;
  margin: 24px 0 0 0;
+ white-space: nowrap;
  cursor: pointer;
  transition: opacity 0.3s ease-in-out;
 }
 
 .modal__submit-button_disabled {
- opacity: 30%;
+  width: 124px;
+  height: 36px;
+  padding: 8px 16px;
+  background-color: #000;
+  font-family: 'Cabinet Grotesk Bold';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #FFF;
+  border-radius: 4px;
+  margin: 24px 0 0 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 30%;
 }
 
 .modal__submit-button:hover {
