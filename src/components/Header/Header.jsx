@@ -3,7 +3,7 @@ import Logo from "../../images/Logo.svg";
 import avatar from "../../images/avatar.svg";
 import { currentDate } from "../../utils/constants";
 import { useState } from "react";
-import Switch from "../Switch/Switch";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { NavLink } from "react-router-dom";
 
 function Header({ handleAddClothes, weatherData }) {
@@ -54,7 +54,7 @@ function Header({ handleAddClothes, weatherData }) {
         </button>
       </div>
 
-      <Switch className="header__switch" />
+      <ToggleSwitch className="header__switch" />
       <button
         onClick={handleAddClothes}
         type="button"
