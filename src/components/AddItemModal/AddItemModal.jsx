@@ -41,7 +41,6 @@ const AddItemModal = ({ onClose, onAddItemModalSubmit }) => {
     const nameError = validateName(name);
     const imageError = validateImageUrl(imageUrl);
     const weatherError = validateWeather(weather);
-    console.log(name, imageUrl, weather);
 
     const newErrors = {
       name: nameError,
@@ -52,9 +51,6 @@ const AddItemModal = ({ onClose, onAddItemModalSubmit }) => {
     setErrors(newErrors);
 
     const formIsValid = !nameError && !imageError && !weatherError;
-    console.log(nameError);
-    console.log(imageError);
-    console.log(weatherError);
     setIsValid(formIsValid);
 
     return formIsValid;

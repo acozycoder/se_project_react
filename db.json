@@ -92,30 +92,34 @@
       "id": "9721"
     },
     {
-      "name": "Skirt",
-      "imageUrl": "https://th.bing.com/th/id/OIP.S5v8LWx_Ed1cJovFQLglfAHaHa?r=0&rs=1&pid=ImgDetMain",
+      "name": "Shorts",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.OLz9WnHumIbtyK3LeYnYZgHaEK?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
       "weather": "hot",
-      "_id": 17,
-      "id": "64ac"
+      "_id": 17
     },
     {
-      "name": "",
-      "imageUrl": "",
-      "weather": "",
-      "_id": 18,
-      "id": "c954"
-    },
-    {
-      "name": "name",
-      "imageUrl": "https://th.bing.com/th/id/OIP.S5v8LWx_Ed1cJovFQLglfAHaHa?r=0&rs=1&pid=ImgDetMain",
+      "name": "Shirt",
+      "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.8pkMsFJQeDlb-6BPJXuACAHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
       "weather": "warm",
       "_id": 19
     },
     {
-      "name": "name",
-      "imageUrl": "https://th.bing.com/th/id/OIP.S5v8LWx_Ed1cJovFQLglfAHaHa?r=0&rs=1&pid=ImgDetMain",
+      "name": "Jeans",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.EKOH4z7y-uCBAkNiWfqdWQHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
       "weather": "warm",
       "_id": 20
+    },
+    {
+      "name": "Cardigan",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.TqTMXprXI7KxvK_1ec7KHQHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "weather": "warm",
+      "_id": 21
+    },
+    {
+      "name": "Sneakers",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.CjVGuoAQ7FrhMqzp36VP7AHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "weather": "warm",
+      "_id": 22
     }
   ]
 }

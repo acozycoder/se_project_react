@@ -76,13 +76,9 @@ function App() {
   };
 
   const handleCardDelete = (card) => {
-    console.log(card);
     deleteItem(card._id)
       .then((item) => {
-        console.log(item);
-        setClothingItems(
-          [item, ...clothingItems].filter((item) => item._id !== card._id)
-        );
+        setClothingItems(clothingItems.filter((item) => item._id !== card._id));
         closeActiveModal();
       })
       .catch(console.error);
@@ -117,6 +113,7 @@ function App() {
                 <Profile
                   handleAddClothes={handleAddClothes}
                   handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
                 />
               }
             />
