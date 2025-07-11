@@ -120,6 +120,18 @@
       "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.CjVGuoAQ7FrhMqzp36VP7AHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3",
       "weather": "warm",
       "_id": 22
+    },
+    {
+      "name": "Sandals",
+      "imageUrl": "https://static.vecteezy.com/system/resources/previews/017/590/195/original/footwear-sandals-women-cartoon-illustration-vector.jpg",
+      "weather": "hot",
+      "_id": 23
+    },
+    {
+      "name": "Sun Hat",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.wjL8FWpHvF7eCa8mnLvwIwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "weather": "hot",
+      "_id": 24
     }
   ]
 }

@@ -44,15 +44,7 @@ function Header({ handleAddClothes, weatherData }) {
           </div>
         </NavLink>
 
-        <button
-          onClick={handleAddClothes}
-          type="button"
-          className="header__nav-add-clothes"
-        >
-          {" "}
-          + Add clothes
-        </button>
-      </div>
+        </div>
 
       <ToggleSwitch className="header__switch" />
       <button

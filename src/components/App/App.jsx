@@ -66,6 +66,7 @@ function App() {
 
     getItems()
       .then((data) => {
+        data.sort((a, b) => b._id - a._id);
         setClothingItems(data);
       })
       .catch((error) => console.log(error));

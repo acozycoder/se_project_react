@@ -1,5 +1,5 @@
 export const currentDate = new Date().toLocaleString(
-    'default', { month: 'long', day: 'numeric' }
+    'default', { month: 'long', day: 'numeric'}
 );
 
 export const weatherOptions = [
