@@ -1,6 +1,10 @@
 import "./DeleteModal.css";
 
 function DeleteModal({ activeModal, onClose, onDelete, card }) {
+  const handleDelete = () => {
+    onDelete(card._id);
+  };
+
   return (
     <div className={` modal ${activeModal === "delete" && "modal_open"} `}>
       <div className="modal__container delete-modal__content">
@@ -22,7 +26,7 @@ function DeleteModal({ activeModal, onClose, onDelete, card }) {
         <button
           className="delete-modal__delete-button"
           type="button"
-          onClick={() => onDelete(card)}
+          onClick={handleDelete}
         >
           Yes, delete item
         </button>

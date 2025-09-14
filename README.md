@@ -51,6 +51,10 @@ Users will have the abilty to view all of their clothing and make deletions if t
 
 Item can be deleted on the main page as well.
 
+## Link to the backend of WTWR
+
+[WTWR Backend](https://github.com/acozycoder/se_project_express)
+
 ## Link to the Prject Brief
 
 [Project Brief](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR)

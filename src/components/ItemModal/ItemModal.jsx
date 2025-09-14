@@ -1,6 +1,16 @@
 import "./ItemModal.css";
 
-function ItemModal({ activeModal, onClose, card, openConfirmationModal }) {
+function ItemModal({
+  activeModal,
+  onClose,
+  card,
+  openConfirmationModal,
+  currentUser,
+}) {
+  const isOwn = card.owner === currentUser._id;
+  const itemDeleteButtonClassName = `modal__delete-button ${
+    isOwn ? "" : "modal__delete-button_hidden"
+  }`;
   return (
     <div className={` modal ${activeModal === "preview" && "modal_open"} `}>
       <div className="modal__container item-modal__content">
@@ -19,7 +29,7 @@ function ItemModal({ activeModal, onClose, card, openConfirmationModal }) {
         <div className="item-modal__caption-button">
           <h2 className="item-modal__caption">{card.name}</h2>
           <button
-            className="item-modal__button"
+            className={itemDeleteButtonClassName}
             type="button"
             onClick={openConfirmationModal}
           >

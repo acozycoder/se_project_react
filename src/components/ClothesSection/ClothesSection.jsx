@@ -1,7 +1,14 @@
 import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ handleAddClothes, handleCardClick, clothingItems }) {
+function ClothesSection({
+  handleAddClothes,
+  handleCardClick,
+  clothingItems,
+  currentUser,
+  onCardLike,
+  isLoggedIn
+}) {
   return (
     <section className="clothes-section">
       <div className="clothes-section__header">
@@ -17,15 +24,22 @@ function ClothesSection({ handleAddClothes, handleCardClick, clothingItems }) {
       </div>
 
       <ul className="cards__list">
-        {clothingItems.map((item) => {
-          return (
-            <ItemCard
-              key={item._id}
-              item={item}
-              onCardClick={handleCardClick}
-            />
-          );
-        })}
+        {clothingItems
+          .filter((item) => {
+            return item.owner === currentUser?._id;
+          })
+          .map((item) => {
+            return (
+              <ItemCard
+                key={item._id}
+                item={item}
+                onCardClick={handleCardClick}
+                onCardLike={onCardLike}
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+              />
+            );
+          })}
       </ul>
     </section>
   );
