@@ -10,7 +10,7 @@ function Profile({
   handleUpdateProfile,
   onCardLike,
   onLogout,
-  isLoggedIn
+  isLoggedIn,
 }) {
   return (
     <section className="profile">

@@ -17,14 +17,14 @@ function ItemCard({ item, onCardClick, onCardLike, currentUser, isLoggedIn }) {
   return (
     <li className="item__card">
       <h2 className="item__name">{item.name}</h2>
-       <button
+      <button
         type="button"
         className={
           isLoggedIn ? itemLikeButtonClassName : "item__like-button_hidden"
         }
         onClick={handleLike}
       ></button>
-      
+
       <img
         src={item.imageUrl}
         alt={item.name}

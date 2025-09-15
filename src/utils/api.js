@@ -1,5 +1,4 @@
 const BASE_URL = "http://localhost:3001";
-const token = localStorage.getItem("jwt");
 
 const getHeaders = (token) => {
   const headers = {
@@ -15,6 +14,7 @@ const checkResponse = (res) => {
 };
 
 const getItems = () => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${BASE_URL}/items`, {
     method: "GET",
     headers: getHeaders(token),
@@ -22,6 +22,7 @@ const getItems = () => {
 };
 
 const addItem = ({ name, weather, imageUrl }) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: getHeaders(token),
@@ -41,6 +42,7 @@ const deleteItem = (id, token) => {
 };
 
 const updateProfile = ({ name, avatar }) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${BASE_URL}/users/me`, {
     method: "PATCH",
     headers: getHeaders(token),

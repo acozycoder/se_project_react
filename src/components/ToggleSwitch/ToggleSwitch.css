@@ -1,55 +1,55 @@
 .switch {
-    width: 56px;
-    height: 28px;
-    border: 2px solid #7E7E7E;
-    border-radius: 20px;
-    margin-left: auto;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
+  width: 56px;
+  height: 28px;
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
+  margin-left: auto;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 
 .switch__checkbox {
-    opacity: 0;
+  opacity: 0;
 }
 
 .switch__button {
-    position: absolute;
-    background-color: black;
-    border-radius: 50%;
-    height: 28px;
-    width: 28px;
-    left: 0px;
-    transition: all 1s;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  height: 28px;
+  width: 28px;
+  left: 0px;
+  transition: all 1s;
 }
 
 .switch__text {
-    font-family:  'Cabinet Grotesk Bold';
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1;
-    position: absolute;
-    top: 7px;
+  font-family: "Cabinet Grotesk Bold";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  position: absolute;
+  top: 7px;
 }
 
 .switch__text_F {
-    left: 9px;
-    color: #fff
+  left: 9px;
+  color: #fff;
 }
 
 .switch__text_C {
-    right: 9px;
-    color: rgba(0, 0, 0, .5);
+  right: 9px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .switch__checkbox:checked ~ .switch__button {
-    left: 28px;
+  left: 28px;
 }
 
 .switch__checkbox:checked ~ .switch__text_C {
-    color: #fff;
+  color: #fff;
 }
 
 .switch__checkbox:checked ~ .switch__text_F {
-    color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, 0.5);
 }

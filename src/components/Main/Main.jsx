@@ -9,7 +9,7 @@ function Main({
   currentTemperatureUnit,
   onCardLike,
   currentUser,
-  isLoggedIn
+  isLoggedIn,
 }) {
   return (
     <main className="main">

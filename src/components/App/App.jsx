@@ -138,14 +138,13 @@ function App() {
     localStorage.removeItem("jwt");
 
     setIsLoggedIn(false);
-    setCurrentUser(null);
-
-   
+    setCurrentUser({});
   };
 
   const handleProfileModalSubmit = ({ name, avatar }) => {
     updateProfile({ name, avatar })
-      .then(() => {
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser);
         closeActiveModal();
       })
       .catch((err) => {

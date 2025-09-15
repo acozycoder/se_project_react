@@ -7,7 +7,7 @@ function ClothesSection({
   clothingItems,
   currentUser,
   onCardLike,
-  isLoggedIn
+  isLoggedIn,
 }) {
   return (
     <section className="clothes-section">
