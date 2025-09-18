@@ -1,8 +1,8 @@
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const AddItemModal = ({ onClose, onAddItemModalSubmit }) => {
+const AddItemModal = ({ onClose, onAddItemModalSubmit, isLoading }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("hot");
@@ -115,7 +115,7 @@ const AddItemModal = ({ onClose, onAddItemModalSubmit }) => {
   return (
     <ModalWithForm
       title="New garment"
-      buttonText="Add garment"
+      submitButtonText={isLoading ? `Adding garment...` : `Add garment`}
       onClose={onClose}
       onSubmit={handleSubmit}
       isValid={isValid}

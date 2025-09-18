@@ -1,10 +1,13 @@
 import "./EditProfileModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const EditProfileModal = ({ onClose, onProfileModalSubmit, currentUser }) => {
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
+const EditProfileModal = ({ onClose, onProfileModalSubmit, isLoading }) => {
+  const { currentUser } = useContext(CurrentUserContext);
+
+  const [name, setName] = useState(currentUser?.name || "");
+  const [avatar, setAvatar] = useState(currentUser?.avatar || "");
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
 
@@ -88,7 +91,7 @@ const EditProfileModal = ({ onClose, onProfileModalSubmit, currentUser }) => {
   return (
     <ModalWithForm
       title="Change profile data"
-      buttonText="Save changes"
+      submitButtonText={isLoading ? "Saving..." : "Save changes"}
       onClose={onClose}
       onSubmit={handleSubmit}
       isValid={isValid}

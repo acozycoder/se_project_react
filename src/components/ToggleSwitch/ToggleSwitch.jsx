@@ -8,18 +8,16 @@ function ToggleSwitch() {
   );
 
   return (
-    <>
-      <label className="switch">
-        <input
-          className="switch__checkbox"
-          type="checkbox"
-          onChange={handleToggleSwitchChange}
-        />
-        <span className="switch__button"></span>
-        <span className="switch__text switch__text_F">F</span>
-        <span className="switch__text switch__text_C">C</span>
-      </label>
-    </>
+    <label className="switch">
+      <input
+        className="switch__checkbox"
+        type="checkbox"
+        onChange={handleToggleSwitchChange}
+      />
+      <span className="switch__button"></span>
+      <span className="switch__text switch__text_F">F</span>
+      <span className="switch__text switch__text_C">C</span>
+    </label>
   );
 }
 

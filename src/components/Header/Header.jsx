@@ -5,6 +5,7 @@ import { currentDate } from "../../utils/constants";
 import { useState, useContext } from "react";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { NavLink } from "react-router-dom";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Header({
   handleAddClothes,
@@ -12,13 +13,14 @@ function Header({
   handleRegister,
   handleLogin,
   isLoggedIn,
-  currentUser,
 }) {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpened(!isMobileMenuOpened);
   };
+
+  const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <header className="header">
@@ -29,7 +31,7 @@ function Header({
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
-
+      {/* 
       {!isMobileMenuOpened ? (
         <button className="header__menu-button" onClick={toggleMobileMenu} />
       ) : (
@@ -50,7 +52,7 @@ function Header({
             />
           </div>
         </NavLink>
-      </div>
+      </div> */}
 
       <ToggleSwitch className="header__switch" />
 
@@ -68,7 +70,7 @@ function Header({
           <NavLink to="/profile" className="header__profile-link">
             <div className="header__user-info">
               <p className="header__username">{currentUser?.name}</p>
-              {currentUser?.avatar ? (
+              {currentUser.avatar ? (
                 <img
                   src={currentUser.avatar}
                   alt={currentUser.name}
@@ -76,7 +78,7 @@ function Header({
                 />
               ) : (
                 <div className="header__avatar-placeholder">
-                  {currentUser?.name?.charAt(0)?.toUpperCase()}
+                  {currentUser.name?.charAt(0)?.toUpperCase()}
                 </div>
               )}
             </div>

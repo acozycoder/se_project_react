@@ -6,26 +6,18 @@ function Profile({
   handleAddClothes,
   handleCardClick,
   clothingItems,
-  currentUser,
   handleUpdateProfile,
   onCardLike,
   onLogout,
-  isLoggedIn,
 }) {
   return (
     <section className="profile">
-      <SideBar
-        currentUser={currentUser}
-        handleUpdateProfile={handleUpdateProfile}
-        onLogout={onLogout}
-      />
+      <SideBar handleUpdateProfile={handleUpdateProfile} onLogout={onLogout} />
       <ClothesSection
-        currentUser={currentUser}
         handleAddClothes={handleAddClothes}
         handleCardClick={handleCardClick}
         clothingItems={clothingItems}
         onCardLike={onCardLike}
-        isLoggedIn={isLoggedIn}
       />
     </section>
   );

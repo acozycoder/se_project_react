@@ -2,7 +2,12 @@ import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState } from "react";
 
-const LoginModal = ({ onClose, onLoginModalSubmit }) => {
+const LoginModal = ({
+  onClose,
+  onLoginModalSubmit,
+  isLoading,
+  onSwitch
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -91,10 +96,12 @@ const LoginModal = ({ onClose, onLoginModalSubmit }) => {
   return (
     <ModalWithForm
       title="Log in"
-      buttonText="Log in"
+      submitButtonText={isLoading ? `Logging in...` : `Log in`}
+      switchButtonText={"or Sign Up"}
       onClose={onClose}
       onSubmit={handleSubmit}
       isValid={isValid}
+      onSwitch={onSwitch}
     >
       <label htmlFor="login-email" className="modal__label">
         Email

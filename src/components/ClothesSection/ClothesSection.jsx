@@ -1,14 +1,15 @@
 import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function ClothesSection({
   handleAddClothes,
   handleCardClick,
   clothingItems,
-  currentUser,
   onCardLike,
-  isLoggedIn,
 }) {
+  const { isLoggedIn, currentUser } = useContext(CurrentUserContext);
   return (
     <section className="clothes-section">
       <div className="clothes-section__header">

@@ -1,6 +1,6 @@
 import "./DeleteModal.css";
 
-function DeleteModal({ activeModal, onClose, onDelete, card }) {
+function DeleteModal({ activeModal, onClose, onDelete, card, isLoading }) {
   const handleDelete = () => {
     onDelete(card._id);
   };
@@ -28,7 +28,7 @@ function DeleteModal({ activeModal, onClose, onDelete, card }) {
           type="button"
           onClick={handleDelete}
         >
-          Yes, delete item
+          {isLoading ? `Deleting...` : `Yes, delete item`}
         </button>
         <button
           className="delete-modal__cancel-button"

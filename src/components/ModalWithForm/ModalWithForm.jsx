@@ -2,11 +2,13 @@ import "./ModalWithForm.css";
 
 function ModalWithForm({
   children,
-  buttonText,
+  submitButtonText,
+  switchButtonText,
   title,
   onClose,
   onSubmit,
   isValid,
+  onSwitch,
 }) {
   return (
     <div className="modal modal_open">
@@ -25,16 +27,25 @@ function ModalWithForm({
           noValidate
         >
           {children}
-          <button
-            type="submit"
-            className={
-              !isValid
-                ? "modal__submit-button_disabled"
-                : "modal__submit-button"
-            }
-          >
-            {buttonText}
-          </button>
+          <div>
+            <button
+              type="submit"
+              className={
+                !isValid
+                  ? "modal__submit-button_disabled"
+                  : "modal__submit-button"
+              }
+            >
+              {submitButtonText}
+            </button>
+            <button
+              type="button"
+              className="modal__switch-button"
+              onClick={onSwitch}
+            >
+              {switchButtonText}
+            </button>
+          </div>
         </form>
       </div>
     </div>

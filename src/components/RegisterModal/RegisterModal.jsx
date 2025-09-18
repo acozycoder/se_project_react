@@ -1,8 +1,13 @@
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const RegisterModal = ({ onClose, onRegisterModalSubmit }) => {
+const RegisterModal = ({
+  onClose,
+  onRegisterModalSubmit,
+  isLoading,
+  onSwitch
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -142,10 +147,12 @@ const RegisterModal = ({ onClose, onRegisterModalSubmit }) => {
   return (
     <ModalWithForm
       title="Sign up"
-      buttonText="Sign Up"
+      submitButtonText={isLoading ? "Signing up..." : "Sign Up"}
       onClose={onClose}
       onSubmit={handleSubmit}
       isValid={isValid}
+      switchButtonText={"or Log in"}
+      onSwitch={onSwitch}
     >
       <label htmlFor="email" className="modal__label">
         Email*
